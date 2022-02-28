@@ -35,7 +35,7 @@ Integer age;
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/login_register?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "root2000");
-            String query = "insert into users(name, lastName, age, email, password) values(?,?,?,?,?)";
+            String query = "insert into `user`(name, lastName, age, email, password) values(?,?,?,?,?)";
             PreparedStatement ps = con.prepareStatement(query);
 
             ps.setString(1, name);

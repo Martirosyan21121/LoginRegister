@@ -32,7 +32,7 @@ public class ServletLogin extends HttpServlet {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/login_register?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "root2000");
             Statement statement = con.createStatement();
-            String query = "select * from users where email='" + email + "' and password='" + password + "'";
+            String query = "select * from `user` where email='" + email + "' and password='" + password + "'";
             ResultSet resultSet = statement.executeQuery(query);
 
             if (resultSet.next()) {
